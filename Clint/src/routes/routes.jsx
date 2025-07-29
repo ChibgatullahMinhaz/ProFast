@@ -5,9 +5,9 @@ import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import Coverage from "../Pages/Coverege/Coverege";
 import AuthLayout from "../Layouts/AuthLayout/AuthLayout";
-import RiderLayout from "../Layouts/RiderLayout/RiderLayout";
 import UserLayouts from "../Layouts/CustomerLayout/UserLayouts";
 import AdminLayout from "../Layouts/AdminLayout/AdminLayout";
+import AgentLayout from "../Layouts/RiderLayout/AgentLayout";
 
 export const router = createBrowserRouter([
   {
@@ -50,8 +50,8 @@ export const router = createBrowserRouter([
     element: <UserLayouts></UserLayouts>,
   },
   {
-    path: "/rider/dashboard",
-    element: <RiderLayout />,
+    path: "/agent/dashboard",
+    element: <AgentLayout />,
   },
   {
     path: "auth",
