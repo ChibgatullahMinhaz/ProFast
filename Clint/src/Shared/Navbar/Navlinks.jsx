@@ -1,10 +1,9 @@
-// components/NavLinks.jsx
 import { NavLink } from "react-router";
 
 const links = [
-  { name: "Services", path: "/services" },
-  { name: "Coverage", path: "/coverage" },
-  { name: "About Us", path: "/about" },
+  { name: "Home", path: "/" },
+  // { name: "Coverage", path: "/coverage" },
+  // { name: "About Us", path: "/about" },
   { name: "Pricing", path: "/pricing" },
   { name: "Be a Rider", path: "/beRider" },
 ];

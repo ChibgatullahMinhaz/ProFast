@@ -32,7 +32,7 @@ const UserLayouts = () => {
         </main>
 
         <footer className="text-center py-4">
-          <p>© 2025 Adda Caffe. All rights reserved.</p>
+          <p>© 2025 ProFast. All rights reserved.</p>
         </footer>
       </div>
 

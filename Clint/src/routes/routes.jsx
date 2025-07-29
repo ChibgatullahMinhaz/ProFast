@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../Layouts/MainLayout/MainLayout";
-import Landing from "../Pages/landingPage/Landing";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import Coverage from "../Pages/Coverege/Coverege";
@@ -8,6 +7,9 @@ import AuthLayout from "../Layouts/AuthLayout/AuthLayout";
 import UserLayouts from "../Layouts/CustomerLayout/UserLayouts";
 import AdminLayout from "../Layouts/AdminLayout/AdminLayout";
 import AgentLayout from "../Layouts/RiderLayout/AgentLayout";
+import NotFound from "../Pages/NotFound/NotFound";
+import BeADriver from "../Pages/BeADriver/BeADriver";
+import Pricing from "../Pages/CalculatePrice/Pricing";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "beRider",
-        element: <Landing />,
+        element: <BeADriver />,
       },
       {
         path: "about",
@@ -36,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "pricing",
-        Component: Coverage,
+        Component: Pricing,
       },
     ],
   },
@@ -76,8 +78,8 @@ export const router = createBrowserRouter([
   //   ),
   // },
 
-  // {
-  //   path: "*",
-  //   Component: NotFound,
-  // },
+  {
+    path: "*",
+    Component: NotFound,
+  },
 ]);
