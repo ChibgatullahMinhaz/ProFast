@@ -1,0 +1,11 @@
+import axios from "axios";
+
+
+export const projectBaseURL = "http://localhost:5000"
+
+const axiosPublicInstance = axios.create({
+    baseURL: projectBaseURL,
+    timeout: 1000,
+});
+
+export default axiosPublicInstance;

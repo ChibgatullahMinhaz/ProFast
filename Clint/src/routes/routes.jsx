@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import MainLayout from "../Layouts/MainLayout/MainLayout";
 import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
@@ -10,6 +10,8 @@ import AgentLayout from "../Layouts/RiderLayout/AgentLayout";
 import NotFound from "../Pages/NotFound/NotFound";
 import BeADriver from "../Pages/BeADriver/BeADriver";
 import Pricing from "../Pages/CalculatePrice/Pricing";
+import Login from "../Components/Auth/Login";
+import Register from "../Components/Auth/Register";
 
 export const router = createBrowserRouter([
   {
@@ -58,16 +60,20 @@ export const router = createBrowserRouter([
   {
     path: "auth",
     element: <AuthLayout></AuthLayout>,
-    // children: [
-    //   {
-    //     path: "login",
-    //     Component: Login,
-    //   },
-    //   {
-    //     path: "register",
-    //     Component: Register,
-    //   },
-    // ],
+    children: [
+      {
+        index: true, 
+        element: <Navigate to="login" replace />,
+      },
+      {
+        path: "login",
+        Component: Login,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+    ],
   },
   // {
   //   path: "/unauthorized",

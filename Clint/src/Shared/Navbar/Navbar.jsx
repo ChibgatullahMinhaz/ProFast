@@ -31,8 +31,23 @@ const Navbar = () => {
 
         {/* Auth Buttons for md+ */}
         <div className="hidden md:flex gap-2">
-          <button className="btn btn-ghost btn-sm">SignUp</button>
-          <button className="btn btn-primary btn-sm">Login</button>
+          <Link to={"/auth/login"}>
+            <button className="btn bg-[#C4E275] rounded-lg border-none text">
+              Login
+            </button>
+          </Link>
+          <Link to={"/auth/register"}>
+            <button className="btn bg-[#C4E275] rounded-lg border-none text">
+              SignUp
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -41,12 +56,12 @@ const Navbar = () => {
         <div className="absolute top-full left-0 w-full z-50 shadow-md md:hidden bg-orange-400">
           <ul className="menu menu-vertical p-4 gap-2 text-base">
             <NavLinks onClick={() => setIsOpen(false)} />
-            <li>
-              <a>SignUp</a>
-            </li>
-            <li>
-              <a>Login</a>
-            </li>
+            <Link to={"/auth/login"}>
+              <button className="btn text">Login</button>
+            </Link>
+            <Link to={"/auth/register"}>
+              <button className="btn text">SignUp</button>
+            </Link>
           </ul>
         </div>
       )}

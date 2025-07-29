@@ -114,17 +114,17 @@ const Pricing = () => {
           <div className="space-x-4 mt-4">
             <button
               type="submit"
-              className="btn btn-primary border-none bg-[#C4E970] rounded-lg"
+              className="btn btn-primary border-none bg-[#C4E970] rounded-lg text"
               disabled={isLoading}
             >
-              {isLoading ? "Calculating..." : "Submit"}
+              {isLoading ? "Calculating..." : "Calculate"}
             </button>
             <button
               type="button"
               onClick={() => {
                 reset();
               }}
-              className="btn btn-outline border-none bg-[#C4E970] rounded-lg"
+              className="btn btn-outline border-none bg-[#C4E970] rounded-lg text"
             >
               Reset
             </button>
@@ -140,7 +140,7 @@ const Pricing = () => {
             </p>
           ) : (
             <p className="text-3xl font-extrabold text-blue-600">
-              {totalPrice ? totalPrice || 0 : <LoadingOverlay />} ৳
+              {totalPrice || '00'} ৳
             </p>
           )}
         </div>
