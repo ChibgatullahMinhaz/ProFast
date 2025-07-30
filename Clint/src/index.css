@@ -36,7 +36,6 @@ body {
   animation: textColorCycle 4s linear infinite;
 }
 
-/* From Uiverse.io by satyamchaudharydev */
 .button {
   position: relative;
   transition: all 0.3s ease-in-out;

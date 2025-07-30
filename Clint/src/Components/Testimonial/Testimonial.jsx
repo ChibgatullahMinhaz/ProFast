@@ -54,9 +54,9 @@ const TestimonialCarousel = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
         <img src={testimonialImage} alt="testimonialImage" className="max-w-sm mx-auto" />
-      <h2 className="text-3xl font-bold text-center mb-3">
+      <div className="text-3xl font-bold text-center mb-3">
         <AnimatedHeading text={"    What Our Clients Say"} />
-      </h2>
+      </div>
       <p className="text-center mb-3">
         Enhance posture, mobility, and well-being effortlessly with Posture Pro.
         Achieve proper alignment, reduce pain, and strengthen your body with

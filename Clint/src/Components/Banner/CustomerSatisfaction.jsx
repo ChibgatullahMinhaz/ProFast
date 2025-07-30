@@ -6,11 +6,11 @@ const CustomerSatisfaction = () => {
     <div className="bg-[#03373D] p-4 max-w-6xl my-4 text-base-100 rounded-l-2xl mx-auto bg-banner ">
       <div className="hero-content flex-col lg:flex-row">
         <div>
-          <h1 className="text-5xl font-bold">
+          <div className="text-5xl font-bold">
             <AnimatedText
               text={" Merchant and Customer Satisfaction is Our First Priority"}
             />
-          </h1>
+          </div>
           <p className="py-6 text-[#DADADA] ">
             We offer the lowest delivery charge with the highest value along
             with 100% safety of your product. Pathao courier delivers your

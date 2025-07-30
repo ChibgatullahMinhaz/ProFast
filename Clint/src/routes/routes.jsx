@@ -12,6 +12,8 @@ import BeADriver from "../Pages/BeADriver/BeADriver";
 import Pricing from "../Pages/CalculatePrice/Pricing";
 import Login from "../Components/Auth/Login";
 import Register from "../Components/Auth/Register";
+import Unauthorized from "../Pages/Unauthorized/Unauthorized";
+import PrivateRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -62,7 +64,7 @@ export const router = createBrowserRouter([
     element: <AuthLayout></AuthLayout>,
     children: [
       {
-        index: true, 
+        index: true,
         element: <Navigate to="login" replace />,
       },
       {
@@ -75,14 +77,14 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/unauthorized",
-  //   element: (
-  //     <PrivateRoute>
-  //       <Unauthorized />,
-  //     </PrivateRoute>
-  //   ),
-  // },
+  {
+    path: "/unauthorized",
+    element: (
+      <PrivateRoute>
+        <Unauthorized />,
+      </PrivateRoute>
+    ),
+  },
 
   {
     path: "*",

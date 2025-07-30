@@ -59,9 +59,9 @@ const OurServices = () => {
     <div className="max-w-7xl mx-auto px-4 py-12 my-4 bg-[#03373D] rounded-xl">
       {/* Section Title */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl text-gray-100 font-bold mb-2">
+        <div className="text-3xl text-gray-100 font-bold mb-2">
           <AnimatedText text={"Our Services"} />
-        </h2>
+        </div>
         <p className="text-gray-100 max-w-2xl mx-auto">
           We offer fast, flexible and reliable courier & logistics solutions
           across Bangladesh.
