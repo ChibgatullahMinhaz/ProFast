@@ -4,10 +4,9 @@ import {
   LayoutDashboard,
   PackagePlus,
   ClipboardList,
-  MapPin,
+  MapPin,ReceiptText
 } from "lucide-react";
 import { Link, Outlet } from "react-router";
-
 const UserLayouts = () => {
   return (
     <div className="drawer lg:drawer-open min-h-screen">
@@ -66,8 +65,19 @@ const UserLayouts = () => {
             </Link>
           </li>
           <li>
-            <Link to="/customer/track/123" className="flex items-center gap-2">
+            <Link
+              to="/user/dashboard/track/parcel"
+              className="flex items-center gap-2"
+            >
               <MapPin size={18} /> Track Parcel
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/user/dashboard/payment/history"
+              className="flex items-center gap-2"
+            >
+              <ReceiptText size={18} /> Payment History
             </Link>
           </li>
         </aside>
