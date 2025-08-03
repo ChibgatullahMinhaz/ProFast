@@ -1,7 +1,7 @@
 // src/routes/PrivateRoute.jsx
 import { Navigate, useLocation } from "react-router";
-import useAuth from "../../Hook/useAuth";
 import { CircularProgress } from "@mui/material";
+import useAuth from "../Hooks/useAuth";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();

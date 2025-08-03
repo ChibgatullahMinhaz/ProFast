@@ -52,7 +52,7 @@ const Register = () => {
         icon: "success",
         confirmButtonText: "OK",
       });
-      navigate("/auth/login");
+      navigate("/");
     },
     onError: (error) => {
       Swal.fire({
@@ -95,11 +95,11 @@ const Register = () => {
 
         {errors.name && <p className="text-red-600">Name is required</p>}
 
-        <div class="flex-column">
+        <div className="flex-column">
           <label>Phone Number </label>
         </div>
 
-        <div class="inputForm">
+        <div className="inputForm">
           <input
             {...register("phone", { required: true })}
             type="number"
@@ -163,7 +163,7 @@ const Register = () => {
           </svg>
           <input
             {...register("password", { required: true })}
-            type={showPass ? "password" : "text"}
+            type={showPass ? "text" : "password"}
             placeholder="Password"
             className="input w-full"
           />
@@ -225,7 +225,7 @@ const Register = () => {
           <p className="text-red-600">You must agree to terms</p>
         )}
 
-        <button type="submit" class="button w-full" disabled={isPending}>
+        <button type="submit" className="button w-full" disabled={isPending}>
           {isPending ? "Creating Account..." : "Register"}
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
             <path

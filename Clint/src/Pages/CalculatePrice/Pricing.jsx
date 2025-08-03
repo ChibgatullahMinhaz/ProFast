@@ -63,50 +63,48 @@ const Pricing = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Parcel Type */}
+
             <div>
-              <label className="label">Parcel Type</label>
-              <select
-                {...register("parcelType", { required: true })}
-                className="select border border-gray-400 w-full"
-              >
-                <option value="">Select Type</option>
-                <option value="document">Document</option>
-                <option value="non-document">Non-document</option>
-              </select>
+              <div className="inputForm">
+                <label className="label">Parcel Type</label>
+                <select
+                  {...register("parcelType", { required: true })}
+                  className="select border border-gray-400 input w-full"
+                >
+                  <option value="">Select Type</option>
+                  <option value="document">Document</option>
+                  <option value="non-document">Non-document</option>
+                </select>
+              </div>
               {errors.parcelType && (
                 <p className="text-red-500 text-sm">Parcel type is required</p>
               )}
             </div>
-
             {/* Destination */}
             <div>
-              <label className="label">Delivery Destination</label>
-              <input
-                {...register("destination", { required: true })}
-                className="input border border-gray-400 w-full"
-                placeholder="e.g., Chittagong"
-              />
+              <div className="inputForm">
+                <label className="label">Delivery Destination</label>
+                <input
+                  {...register("destination", { required: true })}
+                  className="input border border-gray-400 w-full"
+                  placeholder="e.g., Chittagong"
+                />
+              </div>
               {errors.destination && (
                 <p className="text-red-500 text-sm">Destination is required</p>
               )}
             </div>
 
             {/* Weight */}
-            <div>
+            <div className="inputForm">
               <label className="label">Weight (kg)</label>
               <input
                 type="number"
                 step="0.1"
-                {...register("weight", {
-                  required: true,
-                  min: 0.1,
-                })}
+                {...register("weight")}
                 className="input border border-gray-400 w-full"
                 placeholder="e.g., 5"
               />
-              {errors.weight && (
-                <p className="text-red-500 text-sm">Valid weight is required</p>
-              )}
             </div>
           </div>
 
@@ -140,7 +138,7 @@ const Pricing = () => {
             </p>
           ) : (
             <p className="text-3xl font-extrabold text-blue-600">
-              {totalPrice || '00'} ৳
+              {totalPrice || "00"} ৳
             </p>
           )}
         </div>

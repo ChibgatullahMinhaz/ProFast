@@ -3,7 +3,7 @@ import GoFastLogo from "../GoFastLogo/GoFastLogo";
 import { NavLink } from "react-router";
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-[#0B0B0B] text-white rounded p-10">
+    <footer className="footer footer-horizontal footer-center bg-[#0B0B0B] text-white rounded p-10 my-2">
       <nav className=" flex items-end ">
         <GoFastLogo className={"text-orange-50 flex"} />
       </nav>

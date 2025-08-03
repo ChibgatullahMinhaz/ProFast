@@ -45,13 +45,13 @@ const UserLayouts = () => {
           <h2 className="text-xl font-bold mb-4">Customer Menu</h2>
 
           <li>
-            <Link to="/customer" className="flex items-center gap-2">
+            <Link className="flex items-center gap-2">
               <LayoutDashboard size={18} /> Dashboard
             </Link>
           </li>
           <li>
             <Link
-              to="/customer/book-parcel"
+              to="/user/dashboard/customer/book-parcel"
               className="flex items-center gap-2"
             >
               <PackagePlus size={18} /> Book Parcel
@@ -59,7 +59,7 @@ const UserLayouts = () => {
           </li>
           <li>
             <Link
-              to="/customer/my-bookings"
+              to="/user/dashboard/customer/my-bookings"
               className="flex items-center gap-2"
             >
               <ClipboardList size={18} /> My Bookings

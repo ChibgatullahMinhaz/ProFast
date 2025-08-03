@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import agentPending from "../../assets/agent-pending.png";
 import axiosPublicInstance from "../../api/axiosPublicInstance";
+import "../../Components/Auth/login.css";
 
 const myApplication = async (email) => {
   const res = await axiosPublicInstance.get(
@@ -74,12 +75,18 @@ const BeADriver = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name */}
             <div>
-              <label className="label block">Full Name</label>
-              <input
-                {...register("name", { required: true })}
-                className="input border border-gray-400 rounded-lg w-full "
-                placeholder="Enter your name"
-              />
+              <div className="flex-column my-2">
+                <label>Full Name</label>
+              </div>
+
+              {/* <label className="label block"></label> */}
+              <div className="inputForm">
+                <input
+                  {...register("name", { required: true })}
+                  className="input border border-gray-400 rounded-lg w-full "
+                  placeholder="Enter your name"
+                />
+              </div>
               {errors.name && (
                 <p className="text-sm text-red-500">Name is required</p>
               )}
@@ -87,13 +94,19 @@ const BeADriver = () => {
 
             {/* Email */}
             <div>
-              <label className="label">Email</label>
-              <input
-                type="email"
-                {...register("email", { required: true })}
-                className="input w-full border border-gray-400 rounded-lg"
-                placeholder="Email address"
-              />
+              <div className="flex-column my-2">
+                <label>Email</label>
+              </div>
+
+              <div className="inputForm">
+                <input
+                  type="email"
+                  {...register("email", { required: true })}
+                  className="input w-full border border-gray-400 rounded-lg"
+                  placeholder="Email address"
+                />
+              </div>
+
               {errors.email && (
                 <p className="text-sm text-red-500">Email is required</p>
               )}
@@ -101,12 +114,16 @@ const BeADriver = () => {
 
             {/* Contact */}
             <div>
-              <label className="label">Contact Number</label>
-              <input
-                {...register("contact", { required: true })}
-                className="input border border-gray-400 rounded-lg w-full "
-                placeholder="Phone number"
-              />
+              <div className="flex-column my-2">
+                <label className="label">Contact Number</label>
+              </div>
+              <div className="inputForm">
+                <input
+                  {...register("contact", { required: true })}
+                  className="input border border-gray-400 rounded-lg w-full "
+                  placeholder="Phone number"
+                />
+              </div>
               {errors.contact && (
                 <p className="text-sm text-red-500">Contact is required</p>
               )}
@@ -114,12 +131,17 @@ const BeADriver = () => {
 
             {/* Religion */}
             <div>
-              <label className="label">Religion</label>
-              <input
-                {...register("religion", { required: true })}
-                className="input border border-gray-400 rounded-lg w-full "
-                placeholder="Your religion"
-              />
+              <div className="flex-column my-2">
+                <label className="label">Religion</label>
+              </div>
+              <div className="inputForm">
+                <input
+                  {...register("religion", { required: true })}
+                  className="input border border-gray-400 rounded-lg w-full "
+                  placeholder="Your religion"
+                />
+              </div>
+
               {errors.religion && (
                 <p className="text-sm text-red-500">Religion is required</p>
               )}
@@ -127,13 +149,17 @@ const BeADriver = () => {
 
             {/* Age */}
             <div>
-              <label className="label">Age</label>
-              <input
-                type="number"
-                {...register("age", { required: true })}
-                className="input border border-gray-400 rounded-lg w-full "
-                placeholder="Your age"
-              />
+              <div className="flex-column my-2">
+                <label className="label">Age</label>
+              </div>
+              <div className="inputForm">
+                <input
+                  type="number"
+                  {...register("age", { required: true })}
+                  className="input border border-gray-400 rounded-lg w-full "
+                  placeholder="Your age"
+                />
+              </div>
               {errors.age && (
                 <p className="text-sm text-red-500">Age is required</p>
               )}
@@ -141,12 +167,16 @@ const BeADriver = () => {
 
             {/* NID */}
             <div>
-              <label className="label">NID Number</label>
-              <input
-                {...register("nid", { required: true })}
-                className="input border border-gray-400 rounded-lg w-full "
-                placeholder="National ID Number"
-              />
+              <div className="flex-column my-2">
+                <label className="label">NID Number</label>
+              </div>
+              <div className="inputForm">
+                <input
+                  {...register("nid", { required: true })}
+                  className="input border border-gray-400 rounded-lg w-full "
+                  placeholder="National ID Number"
+                />
+              </div>
               {errors.nid && (
                 <p className="text-sm text-red-500">NID is required</p>
               )}
@@ -154,17 +184,20 @@ const BeADriver = () => {
 
             {/* Warehouse Preference */}
             <div className="md:col-span-2">
-              <label className="label">Preferred Warehouse</label>
-              <select
-                {...register("warehouse", { required: true })}
-                className="select border border-gray-400 rounded-lg w-full"
-              >
-                <option value="">Select a warehouse</option>
-                <option value="Mirpur">Mirpur</option>
-                <option value="Uttara">Uttara</option>
-                <option value="Dhanmondi">Dhanmondi</option>
-                <option value="Gulshan">Gulshan</option>
-              </select>
+              <div className="inputForm">
+                <label className="label">Preferred Warehouse</label>
+                <select
+                  {...register("warehouse", { required: true })}
+                  className="input rounded-lg w-full"
+                >
+                  <option value="">Select a warehouse</option>
+                  <option value="Mirpur">Mirpur</option>
+                  <option value="Uttara">Uttara</option>
+                  <option value="Dhanmondi">Dhanmondi</option>
+                  <option value="Gulshan">Gulshan</option>
+                </select>
+              </div>
+
               {errors.warehouse && (
                 <p className="text-sm text-red-500">
                   Please select a warehouse
@@ -182,8 +215,7 @@ const BeADriver = () => {
               
             </button> */}
 
-            <button type="submit" class="button"  disabled={isPending}>
-             
+            <button type="submit" class="button" disabled={isPending}>
               {isPending ? "Applying..." : "Apply Now"}
               <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                 <path
