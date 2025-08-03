@@ -94,7 +94,7 @@ exports.getParcelsByEmail = async (req, res) => {
             return res.status(400).json({ message: "Email query is required" });
         }
 
-        const parcels = await db.collection("parcels").find({ sender_email: email }).toArray();
+        const parcels = await db.collection("parcels").find({ sender_email: email }).sort({ creation_date: -1 }).toArray();
 
         if (parcels.length === 0) {
             return res.status(404).json({ message: "No parcels found for this email" });
@@ -132,3 +132,18 @@ exports.deleteParcel = async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 };
+
+
+exports.getParcelDetails = async (req, res) => {
+
+    try {
+        const id = req.params.id;
+        const db = getDB();
+        const dbCollection = db.collection("parcels")
+        const result = await dbCollection.findOne({ _id: new ObjectId(id) })
+        res.status(200).send(result)
+    } catch (error) {
+        console.error("Error deleting parcel:", error);
+        res.status(500).json({ message: "internal server error", error: error })
+    }
+}

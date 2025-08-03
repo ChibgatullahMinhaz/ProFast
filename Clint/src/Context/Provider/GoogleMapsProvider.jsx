@@ -1,4 +1,3 @@
-import axios from "axios";
 import { GoogleMapsContext } from "../Context/MapsContext";
 
 export const GoogleMapsProvider = ({ children }) => {
